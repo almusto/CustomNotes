@@ -19,7 +19,7 @@ protocol ShareSelectViewControllerDelegate: class {
 class ShareSelectTVC: UITableViewController, URLSessionDelegate {
 
 
-  var userNotes = [Note]()
+  var userNotes: [Note]!
   let reuseIdentifier = "noteCell"
 
   weak var delegate: ShareSelectViewControllerDelegate?

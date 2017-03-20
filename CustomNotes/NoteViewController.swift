@@ -24,6 +24,7 @@ class NoteViewController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
 
 
+
       navigationItem.hidesBackButton = true
 
       navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(onBack(_:)))

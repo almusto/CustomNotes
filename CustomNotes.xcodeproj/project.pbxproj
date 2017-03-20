@@ -20,6 +20,7 @@
 		AA81FCA51E7DB40A00C342FA /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCA41E7DB40A00C342FA /* NoteViewController.swift */; };
 		AA81FCA71E7DB42100C342FA /* GetURL.js in Resources */ = {isa = PBXBuildFile; fileRef = AA81FCA61E7DB42100C342FA /* GetURL.js */; };
 		AA81FCA91E7DB43A00C342FA /* ShareSelectTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCA81E7DB43A00C342FA /* ShareSelectTVC.swift */; };
+		AA81FCAA1E800A0A00C342FA /* NotesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA81FC9F1E7DB39100C342FA /* NotesModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -262,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA81FCAA1E800A0A00C342FA /* NotesModel.xcdatamodeld in Sources */,
 				AA81FC911E7DB32800C342FA /* ShareViewController.swift in Sources */,
 				AA81FCA91E7DB43A00C342FA /* ShareSelectTVC.swift in Sources */,
 			);

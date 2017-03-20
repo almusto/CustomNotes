@@ -22,7 +22,7 @@ class ShareViewController: SLComposeServiceViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    makeNotes()
+//    makeNotes()
     getNotes()
 
     let extensionItem = extensionContext?.inputItems[0] as! NSExtensionItem
@@ -52,7 +52,7 @@ class ShareViewController: SLComposeServiceViewController {
   }
 
   override func isContentValid() -> Bool {
-    if let text = urlString {
+    if urlString != nil {
       if !contentText.isEmpty {
         return true
       }
@@ -105,47 +105,20 @@ extension ShareViewController: ShareSelectViewControllerDelegate {
 extension ShareViewController {
 
   func getNotes() {
-
-    //      let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-    //      let manager = FileManager.default
-    //      let info = try! manager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil, options: [])
-    //      let oneItem = info[0]
-    //      let dataThing = try! Data(contentsOf: oneItem)
-
-
-    let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.sandromusto.notes")!
-    let test = NSPersistentStoreDescription(url: url)
-
-    
-    print(test)
-
-
-
+    let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.sandromusto.notes")?.appendingPathComponent("NotesModel.sqlite")
+    let test = NSPersistentStoreDescription(url: url!)
 
     let container = NSPersistentContainer(name: "NotesModel")
 
     container.persistentStoreDescriptions = [test]
+    container.loadPersistentStores {(storeDescription, error) in }
 
-    container.loadPersistentStores {  (storeDescription, error) in
-      print(storeDescription.options)
-      print("me")
-    }
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
+    notes = try! container.viewContext.fetch(fetchRequest) as! [Note]
 
 
   }
-
-  func makeNotes() {
-    for i in 1...3 {
-      let note = Note()
-      note.title = "Note \(i)"
-      notes.append(note)
-    }
-  }
 }
 
-class Note {
-  var id: String?
-  var title: String?
-}
 
 
