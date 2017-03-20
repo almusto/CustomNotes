@@ -14,7 +14,7 @@ import MobileCoreServices
 
 class NoteViewController: UIViewController, UITextViewDelegate {
 
-  var textView: UITextView!
+  var textView: ClickableTextView!
   var text: String!
 
   var note: Note?
@@ -23,18 +23,16 @@ class NoteViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-
       navigationItem.hidesBackButton = true
-
       navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(onBack(_:)))
-
       navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(onShare(_:)))
 
 
-      textView = UITextView()
+      textView = ClickableTextView(frame: CGRect.zero, textContainer: nil)
       textView.delegate = self
       textView.frame = view.frame
+
+      
 
       setInitialText()
 

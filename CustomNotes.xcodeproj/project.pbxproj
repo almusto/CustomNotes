@@ -18,9 +18,10 @@
 		AA81FCA11E7DB39100C342FA /* NotesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA81FC9F1E7DB39100C342FA /* NotesModel.xcdatamodeld */; };
 		AA81FCA31E7DB3D000C342FA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCA21E7DB3D000C342FA /* CoreDataStack.swift */; };
 		AA81FCA51E7DB40A00C342FA /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCA41E7DB40A00C342FA /* NoteViewController.swift */; };
-		AA81FCA71E7DB42100C342FA /* GetURL.js in Resources */ = {isa = PBXBuildFile; fileRef = AA81FCA61E7DB42100C342FA /* GetURL.js */; };
 		AA81FCA91E7DB43A00C342FA /* ShareSelectTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCA81E7DB43A00C342FA /* ShareSelectTVC.swift */; };
 		AA81FCAA1E800A0A00C342FA /* NotesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA81FC9F1E7DB39100C342FA /* NotesModel.xcdatamodeld */; };
+		AA81FCAC1E80335C00C342FA /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCAB1E80335B00C342FA /* CoreData.swift */; };
+		AA81FCAE1E8092B300C342FA /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCAD1E8092B300C342FA /* CustomTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +65,9 @@
 		AA81FCA01E7DB39100C342FA /* NotesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotesModel.xcdatamodel; sourceTree = "<group>"; };
 		AA81FCA21E7DB3D000C342FA /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		AA81FCA41E7DB40A00C342FA /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
-		AA81FCA61E7DB42100C342FA /* GetURL.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = GetURL.js; sourceTree = "<group>"; };
 		AA81FCA81E7DB43A00C342FA /* ShareSelectTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSelectTVC.swift; sourceTree = "<group>"; };
+		AA81FCAB1E80335B00C342FA /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		AA81FCAD1E8092B300C342FA /* CustomTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				AA81FC781E7DB2F700C342FA /* AppDelegate.swift */,
 				AA81FCA21E7DB3D000C342FA /* CoreDataStack.swift */,
 				AA81FCA41E7DB40A00C342FA /* NoteViewController.swift */,
+				AA81FCAD1E8092B300C342FA /* CustomTextView.swift */,
 				AA81FC7A1E7DB2F700C342FA /* InitialVC.swift */,
 				AA81FC9F1E7DB39100C342FA /* NotesModel.xcdatamodeld */,
 				AA81FC7C1E7DB2F700C342FA /* Main.storyboard */,
@@ -127,7 +130,7 @@
 				AA81FC9D1E7DB33300C342FA /* CustomNoteShare.entitlements */,
 				AA81FCA81E7DB43A00C342FA /* ShareSelectTVC.swift */,
 				AA81FC901E7DB32800C342FA /* ShareViewController.swift */,
-				AA81FCA61E7DB42100C342FA /* GetURL.js */,
+				AA81FCAB1E80335B00C342FA /* CoreData.swift */,
 				AA81FC921E7DB32800C342FA /* MainInterface.storyboard */,
 				AA81FC951E7DB32800C342FA /* Info.plist */,
 			);
@@ -240,7 +243,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA81FC941E7DB32800C342FA /* MainInterface.storyboard in Resources */,
-				AA81FCA71E7DB42100C342FA /* GetURL.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +255,7 @@
 			files = (
 				AA81FCA11E7DB39100C342FA /* NotesModel.xcdatamodeld in Sources */,
 				AA81FC7B1E7DB2F700C342FA /* InitialVC.swift in Sources */,
+				AA81FCAE1E8092B300C342FA /* CustomTextView.swift in Sources */,
 				AA81FC791E7DB2F700C342FA /* AppDelegate.swift in Sources */,
 				AA81FCA51E7DB40A00C342FA /* NoteViewController.swift in Sources */,
 				AA81FCA31E7DB3D000C342FA /* CoreDataStack.swift in Sources */,
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA81FCAC1E80335C00C342FA /* CoreData.swift in Sources */,
 				AA81FCAA1E800A0A00C342FA /* NotesModel.xcdatamodeld in Sources */,
 				AA81FC911E7DB32800C342FA /* ShareViewController.swift in Sources */,
 				AA81FCA91E7DB43A00C342FA /* ShareSelectTVC.swift in Sources */,

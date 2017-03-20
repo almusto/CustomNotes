@@ -14,64 +14,69 @@ import CoreData
 
 class ShareViewController: SLComposeServiceViewController {
 
-  private var urlString: URL?
+  private var urlString: String?
+  private var textString: String?
   var selectedNote: Note!
+  let store = CoreDataStack.store
   var notes = [Note]()
 
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-//    makeNotes()
-    getNotes()
+
+    store.fetchNotes()
+    notes = store.fetchedNotes
 
     let extensionItem = extensionContext?.inputItems[0] as! NSExtensionItem
     let contentTypeURL = kUTTypeURL as String
     let contentTypeText = kUTTypeText as String
 
     for attachment in extensionItem.attachments as! [NSItemProvider] {
-      if attachment.hasItemConformingToTypeIdentifier(contentTypeURL) {
-
+      if attachment.isURL {
         attachment.loadItem(forTypeIdentifier: contentTypeURL, options: nil, completionHandler: { (results, error) in
           let url = results as! URL?
-          self.urlString = url
-
+          self.urlString = url!.absoluteString
         })
       }
-
-      if attachment.hasItemConformingToTypeIdentifier(contentTypeText) {
+      if attachment.isText {
         attachment.loadItem(forTypeIdentifier: contentTypeText, options: nil, completionHandler: { (results, error) in
           let text = results as! String
-          print(text)
-
+          self.textString = text
+          _ = self.isContentValid()
         })
-
       }
     }
-
   }
 
   override func isContentValid() -> Bool {
-    if urlString != nil {
+    if urlString != nil || textString != nil {
       if !contentText.isEmpty {
         return true
       }
     }
-    return false
+    return true
   }
 
   override func didSelectPost() {
+    guard let text = textView.text else {return}
 
-    let configName = "com.shinobicontrols.ShareAlike.BackgroundSessionConfig"
-    let sessionConfig = URLSessionConfiguration.background(withIdentifier: configName)
-    // Extensions aren't allowed their own cache disk space. Need to share with application
-    sessionConfig.sharedContainerIdentifier = "group.com.sandromusto.notes"
-    let session = URLSession(configuration: sessionConfig)
-
-
+    if selectedNote == nil {
+      if let string = urlString {
+        store.storeNote(noteTitle: "\(text)\n\(string)")
+      } else {
+        store.storeNote(noteTitle: "\(text)")
+      }
+    } else {
+      if let string = urlString {
+        selectedNote.title?.append("\n\(text)\n\(string)")
+        store.saveContext()
+      } else {
+        selectedNote.title?.append("\n\(text)")
+        store.saveContext()
+      }
+    }
     extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)
-
-
   }
 
 
@@ -100,24 +105,20 @@ extension ShareViewController: ShareSelectViewControllerDelegate {
   }
 }
 
-//MARK: Populate Notes from CoreData
-
-extension ShareViewController {
-
-  func getNotes() {
-    let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.sandromusto.notes")?.appendingPathComponent("NotesModel.sqlite")
-    let test = NSPersistentStoreDescription(url: url!)
-
-    let container = NSPersistentContainer(name: "NotesModel")
-
-    container.persistentStoreDescriptions = [test]
-    container.loadPersistentStores {(storeDescription, error) in }
-
-    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
-    notes = try! container.viewContext.fetch(fetchRequest) as! [Note]
+//MARK: NSItemProvider check
 
 
+
+extension NSItemProvider {
+
+  var isURL: Bool {
+    return hasItemConformingToTypeIdentifier(kUTTypeURL as String)
   }
+  
+  var isText: Bool {
+    return hasItemConformingToTypeIdentifier(kUTTypeText as String)
+  }
+  
 }
 
 
