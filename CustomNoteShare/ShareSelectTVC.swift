@@ -30,6 +30,8 @@ class ShareSelectTVC: UITableViewController, URLSessionDelegate {
       navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
       title = "Select Note"
 
+      tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+
     }
 
     // MARK: - Table view data source
@@ -63,7 +65,4 @@ class ShareSelectTVC: UITableViewController, URLSessionDelegate {
 
 
 
-class Note {
-  var id: String?
-  var title: String?
-}
+

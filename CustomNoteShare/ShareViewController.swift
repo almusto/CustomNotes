@@ -22,6 +22,9 @@ class ShareViewController: SLComposeServiceViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    makeNotes()
+    getNotes()
+
     let extensionItem = extensionContext?.inputItems[0] as! NSExtensionItem
     let contentTypeURL = kUTTypeURL as String
     let contentTypeText = kUTTypeText as String
@@ -75,7 +78,7 @@ class ShareViewController: SLComposeServiceViewController {
   override func configurationItems() -> [Any]! {
     let item = SLComposeSheetConfigurationItem()
     item?.title = "Selected Note"
-    item?.value = "Note Title"
+    item?.value = selectedNote?.title ?? "New Note"
     item?.tapHandler = {
       let vc = ShareSelectTVC()
       vc.delegate = self
@@ -112,7 +115,11 @@ extension ShareViewController {
 
     let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.sandromusto.notes")!
     let test = NSPersistentStoreDescription(url: url)
+
+    
     print(test)
+
+
 
 
     let container = NSPersistentContainer(name: "NotesModel")
@@ -126,6 +133,19 @@ extension ShareViewController {
 
 
   }
+
+  func makeNotes() {
+    for i in 1...3 {
+      let note = Note()
+      note.title = "Note \(i)"
+      notes.append(note)
+    }
+  }
+}
+
+class Note {
+  var id: String?
+  var title: String?
 }
 
 
