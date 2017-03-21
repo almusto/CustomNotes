@@ -59,7 +59,9 @@ class ShareViewController: SLComposeServiceViewController {
   }
 
   override func didSelectPost() {
+    print(#function)
     guard let text = textView.text else {return}
+    print(text)
 
     if selectedNote == nil {
       if let string = urlString {
@@ -68,11 +70,13 @@ class ShareViewController: SLComposeServiceViewController {
         store.storeNote(noteTitle: "\(text)")
       }
     } else {
+      var currentTitle = selectedNote.title!
       if let string = urlString {
-        selectedNote.title?.append("\n\(text)\n\(string)")
-        store.saveContext()
+        currentTitle.append("\n\(text)\n\(string)")
+        store.update(note: selectedNote, withTitle: currentTitle)
       } else {
-        selectedNote.title?.append("\n\(text)")
+        currentTitle.append("\n\(text)")
+        store.update(note: selectedNote, withTitle: currentTitle)
         store.saveContext()
       }
     }

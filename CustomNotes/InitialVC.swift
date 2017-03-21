@@ -20,6 +20,11 @@ class InitialVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     super.viewDidLoad()
 
 
+
+
+    NotificationCenter.default.addObserver(forName: Notification.Name.UIApplicationWillEnterForeground, object: nil, queue: nil, using: reload)
+
+
     tableView = UITableView()
     tableView.delegate = self
     tableView.dataSource = self
@@ -33,11 +38,22 @@ class InitialVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   }
 
+  deinit {
+    NotificationCenter.default.removeObserver(self)
+  }
+
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     coreStack.fetchNotes()
     notes = coreStack.fetchedNotes
     tableView.reloadData()
+  }
+
+  func reload(nofitication: Notification) {
+    self.coreStack.fetchNotes()
+    self.notes = self.coreStack.fetchedNotes
+    self.tableView.reloadData()
+    print("Calling reload data")
 
   }
 
@@ -60,6 +76,8 @@ class InitialVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let dest = NoteViewController()
+    let selectedNote = notes[indexPath.row]
+    dump(selectedNote)
     dest.note = notes[indexPath.row]
     navigationController?.pushViewController(dest, animated: false)
   }

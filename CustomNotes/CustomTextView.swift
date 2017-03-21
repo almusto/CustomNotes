@@ -113,24 +113,24 @@ public class ClickableTextView: UITextView {
 
   func openLink(link:String){
 
-    guard let checkUrlString = link.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
-
-    if let checkURL = URL(string: checkUrlString) {
-      if UIApplication.shared.canOpenURL(checkURL) {
-        UIApplication.shared.open(checkURL, options: [:], completionHandler: nil)
-
-        print("url successfully opened")
-      }
-    } else {
-      print("invalid url")
-    }
-  }
-
-
-  public override func didMoveToWindow() {
-    if self.window == nil{
-      self.removeGestureRecognizer(tap)
-      print("ClickableTextView View removed from")
-    }
+//    guard let checkUrlString = link.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+//
+//    if let checkURL = URL(string: checkUrlString) {
+//      if UIApplication.shared.canOpenURL(checkURL) {
+//        UIApplication.shared.open(checkURL, options: [:], completionHandler: nil)
+//
+//        print("url successfully opened")
+//      }
+//    } else {
+//      print("invalid url")
+//    }
+//  }
+//
+//
+//  public override func didMoveToWindow() {
+//    if self.window == nil{
+//      self.removeGestureRecognizer(tap)
+//      print("ClickableTextView View removed from")
+//    }
   }
 }

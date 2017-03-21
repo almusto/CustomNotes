@@ -18,7 +18,9 @@ final class CoreDataStack {
 
 
   var context: NSManagedObjectContext {
-    return persistentContainer.viewContext
+    let c =  persistentContainer.viewContext
+    c.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+    return c
   }
 
 
@@ -28,15 +30,21 @@ final class CoreDataStack {
     let note = Note(context: context)
     note.title = noteTitle
     try! context.save()
-
+    print("storing notes - before fetch")
+    fetchNotes()
   }
 
+  func update(note: Note, withTitle title: String) {
+    note.title! = title
+    try! context.save()
+    print("updating notes - before fetch")
+    fetchNotes()
+  }
 
 
   func fetchNotes() {
     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
     self.fetchedNotes = try! context.fetch(fetchRequest) as! [Note]
-
   }
 
   func delete(note: Note) {
@@ -59,7 +67,7 @@ final class CoreDataStack {
 
   // MARK: - Core Data Saving support
 
-  func saveContext () {
+  func saveContext() {
     let context = persistentContainer.viewContext
     if context.hasChanges {
       do {
@@ -77,18 +85,9 @@ final class CoreDataStack {
 class CustomPersistantContainer : NSPersistentContainer {
 
   static let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.sandromusto.notes")!
-
   let storeDescription = NSPersistentStoreDescription(url: url)
-
 
   override class func defaultDirectoryURL() -> URL {
     return url
   }
-
-
-//  convenience init(name: String) {
-//    self.init()
-//    self.persistentStoreDescriptions = [storeDescription]
-//  }
-
 }

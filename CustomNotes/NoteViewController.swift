@@ -32,8 +32,6 @@ class NoteViewController: UIViewController, UITextViewDelegate {
       textView.delegate = self
       textView.frame = view.frame
 
-      
-
       setInitialText()
 
       view.addSubview(textView)

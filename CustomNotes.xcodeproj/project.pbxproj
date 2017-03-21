@@ -20,8 +20,11 @@
 		AA81FCA51E7DB40A00C342FA /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCA41E7DB40A00C342FA /* NoteViewController.swift */; };
 		AA81FCA91E7DB43A00C342FA /* ShareSelectTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCA81E7DB43A00C342FA /* ShareSelectTVC.swift */; };
 		AA81FCAA1E800A0A00C342FA /* NotesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA81FC9F1E7DB39100C342FA /* NotesModel.xcdatamodeld */; };
-		AA81FCAC1E80335C00C342FA /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCAB1E80335B00C342FA /* CoreData.swift */; };
 		AA81FCAE1E8092B300C342FA /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCAD1E8092B300C342FA /* CustomTextView.swift */; };
+		AA81FCB21E80A57700C342FA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCA21E7DB3D000C342FA /* CoreDataStack.swift */; };
+		AA81FCB41E80A7E600C342FA /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FC7A1E7DB2F700C342FA /* InitialVC.swift */; };
+		AA81FCB51E80A80400C342FA /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCA41E7DB40A00C342FA /* NoteViewController.swift */; };
+		AA81FCB61E80A82300C342FA /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCAD1E8092B300C342FA /* CustomTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,10 +269,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA81FCAC1E80335C00C342FA /* CoreData.swift in Sources */,
+				AA81FCB41E80A7E600C342FA /* InitialVC.swift in Sources */,
 				AA81FCAA1E800A0A00C342FA /* NotesModel.xcdatamodeld in Sources */,
 				AA81FC911E7DB32800C342FA /* ShareViewController.swift in Sources */,
 				AA81FCA91E7DB43A00C342FA /* ShareSelectTVC.swift in Sources */,
+				AA81FCB61E80A82300C342FA /* CustomTextView.swift in Sources */,
+				AA81FCB51E80A80400C342FA /* NoteViewController.swift in Sources */,
+				AA81FCB21E80A57700C342FA /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
