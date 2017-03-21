@@ -69,7 +69,6 @@
 		AA81FCA21E7DB3D000C342FA /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		AA81FCA41E7DB40A00C342FA /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		AA81FCA81E7DB43A00C342FA /* ShareSelectTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSelectTVC.swift; sourceTree = "<group>"; };
-		AA81FCAB1E80335B00C342FA /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		AA81FCAD1E8092B300C342FA /* CustomTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +132,6 @@
 				AA81FC9D1E7DB33300C342FA /* CustomNoteShare.entitlements */,
 				AA81FCA81E7DB43A00C342FA /* ShareSelectTVC.swift */,
 				AA81FC901E7DB32800C342FA /* ShareViewController.swift */,
-				AA81FCAB1E80335B00C342FA /* CoreData.swift */,
 				AA81FC921E7DB32800C342FA /* MainInterface.storyboard */,
 				AA81FC951E7DB32800C342FA /* Info.plist */,
 			);

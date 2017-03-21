@@ -59,25 +59,25 @@ class ShareViewController: SLComposeServiceViewController {
   }
 
   override func didSelectPost() {
-    print(#function)
     guard let text = textView.text else {return}
-    print(text)
+    let date = NSDate()
 
     if selectedNote == nil {
       if let string = urlString {
-        store.storeNote(noteTitle: "\(text)\n\(string)")
+        store.storeNote(withTitle: "\(text)\n\(string)", onDate: date)
       } else {
-        store.storeNote(noteTitle: "\(text)")
+        store.storeNote(withTitle: text, onDate: date)
       }
     } else {
       var currentTitle = selectedNote.title!
       if let string = urlString {
         currentTitle.append("\n\(text)\n\(string)")
-        store.update(note: selectedNote, withTitle: currentTitle)
+        store.storeNote(withTitle: currentTitle, onDate: date)
+        store.delete(note: selectedNote)
       } else {
         currentTitle.append("\n\(text)")
-        store.update(note: selectedNote, withTitle: currentTitle)
-        store.saveContext()
+        store.storeNote(withTitle: currentTitle, onDate: date)
+        store.delete(note: selectedNote)
       }
     }
     extensionContext?.completeRequest(returningItems: nil, completionHandler: nil)

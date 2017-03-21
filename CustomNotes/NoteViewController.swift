@@ -43,7 +43,8 @@ class NoteViewController: UIViewController, UITextViewDelegate {
   func onBack(_ backButton: UIBarButtonItem) {
     if let text = textView.text {
       if note == nil {
-        coreStack.storeNote(noteTitle: text)
+        let date = NSDate()
+        coreStack.storeNote(withTitle: text, onDate: date)
       } else {
         note!.title = text
         coreStack.saveContext()

@@ -18,32 +18,25 @@ final class CoreDataStack {
 
 
   var context: NSManagedObjectContext {
-    let c =  persistentContainer.viewContext
-    c.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-    return c
+    return persistentContainer.viewContext
   }
 
 
   var fetchedNotes = [Note]()
 
-  func storeNote(noteTitle: String) {
+  func storeNote(withTitle title: String, onDate date: NSDate) {
     let note = Note(context: context)
-    note.title = noteTitle
+    note.title = title
+    note.date = date
     try! context.save()
     print("storing notes - before fetch")
     fetchNotes()
   }
 
-  func update(note: Note, withTitle title: String) {
-    note.title! = title
-    try! context.save()
-    print("updating notes - before fetch")
-    fetchNotes()
-  }
-
-
   func fetchNotes() {
     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
+    let dateSort = NSSortDescriptor(key:"date", ascending:false)
+    fetchRequest.sortDescriptors = [dateSort]
     self.fetchedNotes = try! context.fetch(fetchRequest) as! [Note]
   }
 
