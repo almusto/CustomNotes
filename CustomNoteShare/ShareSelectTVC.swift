@@ -11,7 +11,7 @@ import CoreData
 
 
 protocol ShareSelectViewControllerDelegate: class {
-  func selected(note: Note)
+    func selected(note: Note)
 }
 
 
@@ -19,18 +19,18 @@ protocol ShareSelectViewControllerDelegate: class {
 class ShareSelectTVC: UITableViewController, URLSessionDelegate {
 
 
-  var userNotes: [Note]!
-  let reuseIdentifier = "noteCell"
+    var userNotes: [Note]!
+    let reuseIdentifier = "noteCell"
 
-  weak var delegate: ShareSelectViewControllerDelegate?
+    weak var delegate: ShareSelectViewControllerDelegate?
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-      title = "Select Note"
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        title = "Select Note"
 
-      tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
 
     }
 
@@ -54,13 +54,13 @@ class ShareSelectTVC: UITableViewController, URLSessionDelegate {
         return cell
     }
 
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    if let delegate = delegate {
-      delegate.selected(note: userNotes[indexPath.row])
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let delegate = delegate {
+            delegate.selected(note: userNotes[indexPath.row])
+        }
     }
-  }
-
-
+    
+    
 }
 
 

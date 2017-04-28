@@ -9,22 +9,19 @@
 /* Begin PBXBuildFile section */
 		AA81FC791E7DB2F700C342FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FC781E7DB2F700C342FA /* AppDelegate.swift */; };
 		AA81FC7B1E7DB2F700C342FA /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FC7A1E7DB2F700C342FA /* InitialVC.swift */; };
-		AA81FC7E1E7DB2F700C342FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA81FC7C1E7DB2F700C342FA /* Main.storyboard */; };
 		AA81FC801E7DB2F700C342FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA81FC7F1E7DB2F700C342FA /* Assets.xcassets */; };
 		AA81FC831E7DB2F700C342FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA81FC811E7DB2F700C342FA /* LaunchScreen.storyboard */; };
-		AA81FC911E7DB32800C342FA /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FC901E7DB32800C342FA /* ShareViewController.swift */; };
+		AA81FC911E7DB32800C342FA /* ShareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FC901E7DB32800C342FA /* ShareVC.swift */; };
 		AA81FC941E7DB32800C342FA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA81FC921E7DB32800C342FA /* MainInterface.storyboard */; };
 		AA81FC981E7DB32800C342FA /* CustomNoteShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA81FC8E1E7DB32800C342FA /* CustomNoteShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AA81FCA11E7DB39100C342FA /* NotesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA81FC9F1E7DB39100C342FA /* NotesModel.xcdatamodeld */; };
 		AA81FCA31E7DB3D000C342FA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCA21E7DB3D000C342FA /* CoreDataStack.swift */; };
-		AA81FCA51E7DB40A00C342FA /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCA41E7DB40A00C342FA /* NoteViewController.swift */; };
+		AA81FCA51E7DB40A00C342FA /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCA41E7DB40A00C342FA /* NotesVC.swift */; };
 		AA81FCA91E7DB43A00C342FA /* ShareSelectTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCA81E7DB43A00C342FA /* ShareSelectTVC.swift */; };
 		AA81FCAA1E800A0A00C342FA /* NotesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA81FC9F1E7DB39100C342FA /* NotesModel.xcdatamodeld */; };
 		AA81FCAE1E8092B300C342FA /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCAD1E8092B300C342FA /* CustomTextView.swift */; };
 		AA81FCB21E80A57700C342FA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCA21E7DB3D000C342FA /* CoreDataStack.swift */; };
-		AA81FCB41E80A7E600C342FA /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FC7A1E7DB2F700C342FA /* InitialVC.swift */; };
-		AA81FCB51E80A80400C342FA /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCA41E7DB40A00C342FA /* NoteViewController.swift */; };
-		AA81FCB61E80A82300C342FA /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81FCAD1E8092B300C342FA /* CustomTextView.swift */; };
+		AAAB8EA21EB36D180031393F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAAB8EA01EB36D180031393F /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,21 +52,21 @@
 		AA81FC751E7DB2F700C342FA /* CustomNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA81FC781E7DB2F700C342FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA81FC7A1E7DB2F700C342FA /* InitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
-		AA81FC7D1E7DB2F700C342FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA81FC7F1E7DB2F700C342FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA81FC821E7DB2F700C342FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA81FC841E7DB2F700C342FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA81FC8E1E7DB32800C342FA /* CustomNoteShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CustomNoteShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA81FC901E7DB32800C342FA /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		AA81FC901E7DB32800C342FA /* ShareVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareVC.swift; sourceTree = "<group>"; };
 		AA81FC931E7DB32800C342FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		AA81FC951E7DB32800C342FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA81FC9D1E7DB33300C342FA /* CustomNoteShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CustomNoteShare.entitlements; sourceTree = "<group>"; };
 		AA81FC9E1E7DB34200C342FA /* CustomNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CustomNotes.entitlements; sourceTree = "<group>"; };
 		AA81FCA01E7DB39100C342FA /* NotesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NotesModel.xcdatamodel; sourceTree = "<group>"; };
 		AA81FCA21E7DB3D000C342FA /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		AA81FCA41E7DB40A00C342FA /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		AA81FCA41E7DB40A00C342FA /* NotesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
 		AA81FCA81E7DB43A00C342FA /* ShareSelectTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSelectTVC.swift; sourceTree = "<group>"; };
 		AA81FCAD1E8092B300C342FA /* CustomTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		AAAB8EA11EB36D180031393F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,16 +108,12 @@
 		AA81FC771E7DB2F700C342FA /* CustomNotes */ = {
 			isa = PBXGroup;
 			children = (
-				AA81FC9E1E7DB34200C342FA /* CustomNotes.entitlements */,
-				AA81FC781E7DB2F700C342FA /* AppDelegate.swift */,
-				AA81FCA21E7DB3D000C342FA /* CoreDataStack.swift */,
-				AA81FCA41E7DB40A00C342FA /* NoteViewController.swift */,
-				AA81FCAD1E8092B300C342FA /* CustomTextView.swift */,
-				AA81FC7A1E7DB2F700C342FA /* InitialVC.swift */,
-				AA81FC9F1E7DB39100C342FA /* NotesModel.xcdatamodeld */,
-				AA81FC7C1E7DB2F700C342FA /* Main.storyboard */,
+				AAAB8E9F1EB36A800031393F /* Utility */,
+				AAAB8E9E1EB36A6B0031393F /* Views */,
+				AAAB8E9D1EB36A610031393F /* Controllers */,
 				AA81FC7F1E7DB2F700C342FA /* Assets.xcassets */,
 				AA81FC811E7DB2F700C342FA /* LaunchScreen.storyboard */,
+				AAAB8EA01EB36D180031393F /* Main.storyboard */,
 				AA81FC841E7DB2F700C342FA /* Info.plist */,
 			);
 			path = CustomNotes;
@@ -131,11 +124,39 @@
 			children = (
 				AA81FC9D1E7DB33300C342FA /* CustomNoteShare.entitlements */,
 				AA81FCA81E7DB43A00C342FA /* ShareSelectTVC.swift */,
-				AA81FC901E7DB32800C342FA /* ShareViewController.swift */,
+				AA81FC901E7DB32800C342FA /* ShareVC.swift */,
 				AA81FC921E7DB32800C342FA /* MainInterface.storyboard */,
 				AA81FC951E7DB32800C342FA /* Info.plist */,
 			);
 			path = CustomNoteShare;
+			sourceTree = "<group>";
+		};
+		AAAB8E9D1EB36A610031393F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AA81FC781E7DB2F700C342FA /* AppDelegate.swift */,
+				AA81FC7A1E7DB2F700C342FA /* InitialVC.swift */,
+				AA81FCA41E7DB40A00C342FA /* NotesVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AAAB8E9E1EB36A6B0031393F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA81FCAD1E8092B300C342FA /* CustomTextView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		AAAB8E9F1EB36A800031393F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				AA81FC9E1E7DB34200C342FA /* CustomNotes.entitlements */,
+				AA81FCA21E7DB3D000C342FA /* CoreDataStack.swift */,
+				AA81FC9F1E7DB39100C342FA /* NotesModel.xcdatamodeld */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,9 +254,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAAB8EA21EB36D180031393F /* Main.storyboard in Resources */,
 				AA81FC831E7DB2F700C342FA /* LaunchScreen.storyboard in Resources */,
 				AA81FC801E7DB2F700C342FA /* Assets.xcassets in Resources */,
-				AA81FC7E1E7DB2F700C342FA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +279,7 @@
 				AA81FC7B1E7DB2F700C342FA /* InitialVC.swift in Sources */,
 				AA81FCAE1E8092B300C342FA /* CustomTextView.swift in Sources */,
 				AA81FC791E7DB2F700C342FA /* AppDelegate.swift in Sources */,
-				AA81FCA51E7DB40A00C342FA /* NoteViewController.swift in Sources */,
+				AA81FCA51E7DB40A00C342FA /* NotesVC.swift in Sources */,
 				AA81FCA31E7DB3D000C342FA /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,12 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA81FCB41E80A7E600C342FA /* InitialVC.swift in Sources */,
 				AA81FCAA1E800A0A00C342FA /* NotesModel.xcdatamodeld in Sources */,
-				AA81FC911E7DB32800C342FA /* ShareViewController.swift in Sources */,
+				AA81FC911E7DB32800C342FA /* ShareVC.swift in Sources */,
 				AA81FCA91E7DB43A00C342FA /* ShareSelectTVC.swift in Sources */,
-				AA81FCB61E80A82300C342FA /* CustomTextView.swift in Sources */,
-				AA81FCB51E80A80400C342FA /* NoteViewController.swift in Sources */,
 				AA81FCB21E80A57700C342FA /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,14 +306,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AA81FC7C1E7DB2F700C342FA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AA81FC7D1E7DB2F700C342FA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AA81FC811E7DB2F700C342FA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -310,6 +320,14 @@
 				AA81FC931E7DB32800C342FA /* Base */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		AAAB8EA01EB36D180031393F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAAB8EA11EB36D180031393F /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -487,6 +505,7 @@
 				AA81FC891E7DB2F700C342FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA81FC991E7DB32800C342FA /* Build configuration list for PBXNativeTarget "CustomNoteShare" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +514,7 @@
 				AA81FC9B1E7DB32800C342FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
